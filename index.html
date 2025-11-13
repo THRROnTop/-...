@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موقع الثريا THRR</title>
+<style>
+  body {
+    font-family: "Tajawal", sans-serif;
+    background-color: #2f2f2f; /* رمادي غامق */
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+  }
+  h1 {
+    color: #ffffff; /* أبيض */
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+  input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 250px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+  }
+  button {
+    background-color: #28a745; /* أخضر */
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #218838;
+  }
+  #result {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #28a745; /* الناتج أخضر */
+  }
+</style>
+</head>
+<body>
+  <h1>موقع خاص لدى الثريا THRR لدى قطاع حرس الحدود</h1>
+
+  <input type="text" id="directive" placeholder="التوجيه">
+  <input type="text" id="militaryCode" placeholder="الكود العسكري">
+  <button onclick="showResult()">تأكيد</button>
+
+  <div id="result"></div>
+
+<script>
+function showResult() {
+  var directive = document.getElementById('directive').value.trim();
+  var code = document.getElementById('militaryCode').value.trim();
+  
+  if (directive === '' || code === '') {
+    document.getElementById('result').innerHTML = "الرجاء تعبئة جميع الخانات.";
+    return;
+  }
+  
+  document.getElementById('result').innerHTML = 
+    "التوجيه: " + directive + "<br>الكود العسكري: " + code + "<br><br>[" + directive + " | " + code + "]";
+}
+</script>
+
+</body>
+</html>
